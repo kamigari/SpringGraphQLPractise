@@ -1,0 +1,23 @@
+type Post {
+	id: ID!
+	authorId: Int!
+	text: String!
+}
+
+input PostInput {
+	authorId: Int!
+	text: String!
+}
+
+type PostsQuerys {
+	posts: [Post]
+}
+
+type PostsMutations {
+	addPosts(post: PostInput!): Post
+}
+
+schema {
+	query: PostsQuerys
+	mutation: PostsMutations
+}
